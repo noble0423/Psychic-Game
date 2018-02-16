@@ -1,11 +1,7 @@
 // find a way to stop the game after 10 incorrect answers (FUNCTION). 10 incorrect answers equals 1 loss
     // restart game after a win
 
-// display guesses made until win/loss in HTML
-
 // don't allow user to pick same letter they have already picked
-
-// array of "wrong answer" sayings (strings) that the computer can pick at random
 
 var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
 var wins = 0;
@@ -25,31 +21,53 @@ document.onkeyup = function() {
      
     if (options.indexOf(userGuess) === -1) {
         //console.log("non letter was picked");
-        alert("I am thinking of a letter! Numbers and other characters don't count!");
+        alert("I am thinking of a letter! Numbers and other characters don't count! A true Psychic would know that.");
         
     }
 
-    else {
+    //else {
         //console.log("a letter was picked");
 
-        if (userGuess === computerGuess) {
-            alert("Oh my god--I guess you are psychic!");
-            wins++;
-        }
+        //for (i = 0; i < guessedLetters.length; i++) {
+        //    if guessedLetters.indexOf(userGuess)
+        //}
 
-        else {
-            var youAreWrong = wrongGuessSayings[Math.floor(Math.random()*wrongGuessSayings.length)];
-                console.log(youAreWrong);
-                console.log(guessesLeft--);
-        }
+    if (userGuess === computerGuess) {
+        alert("Oh my god--I guess you are psychic!");
+        wins++;
     }
+        
+        //else if (guessedLetters.indexOf() != userGuess) {
+        //    console.log("move to next step-comparing values");
+        //}
 
+    else {
+
+        var youAreWrong = wrongGuessSayings[Math.floor(Math.random()*wrongGuessSayings.length)];
+        alert(youAreWrong);
+        console.log(guessesLeft--);
+        }
+    //}
+
+    // END GAME   
+
+    function reWriteStats() {
+        console.log(guessesLeft);
+        console.log(guessedLetters);
+     }
+   
     if (guessesLeft === 0) {
         losses++;
         console.log("STOP GAME");
+        reWriteStats();
+        var computerGuess = options[Math.floor(Math.random()*options.length)];
+            console.log("User's letter is " + computerGuess);
+
     }
 
-    var html = "<h1>Welcome to the Psychic Game!!!!</h1>" + "<p>I am thinking of a letter...</p>" + "<p>type any letter to see if you are psychic.</p>" + "<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>" + "<p>Guesses left: " + guessesLeft + "</p>" + "<p>Letters you have guessed so far: </p>" + guessedLetters; 
+
+
+    var html = "<h1>Welcome to the Psychic Game!!!!</h1>" + "<h3>I am thinking of a letter...</h3>" + "<h3>type any letter to see if you are psychic.</h3>" + "<h5>Wins: " + wins + "</h5>" + "<h5>Losses: " + losses + "</h5>" + "<h5>Guesses left: " + guessesLeft + "</h5>" + "<h5>Letters you have guessed so far: </h5>" + "<h4> " + guessedLetters + "  </h4>"; 
 
         document.querySelector("#game").innerHTML = html;
         
