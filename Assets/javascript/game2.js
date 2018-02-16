@@ -6,7 +6,7 @@
 var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
 var wins = 0;
 var losses = 0;
-var guessesLeft = 10;
+var guessesLeft = 10; 
 var guessedLetters = [];
 var wrongGuessSayings = ["That's not the letter I am thinking of, hehehe.", "BUZZ!--nope!", "Nice try, but not correct.", "You're no Psychic", "You'll never guess the letter that I am thinking", "I can see we're gonna be here for a while", "This really isn't that hard", "Wrong! BWAHAHAHAHAHA!"];
 
