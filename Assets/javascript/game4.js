@@ -56,7 +56,6 @@ var reset = function() {
 updateLetterToGuess();
 
 document.onkeyup = function (event) {
-    console.log(event.which);
 
     // if key pressed is not a letter, must chose again
     if (event.which < 65 || event.which > 90) {
